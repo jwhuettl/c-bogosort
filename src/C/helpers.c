@@ -31,3 +31,28 @@ void printdeck(uint8_t * array) {
 
   printf("\n");
 }
+
+// builds deck 
+
+void builddeck(uint8_t * array, int size) {
+  
+  array = (uint8_t *) calloc(size, sizeof(uint8_t));
+
+  for (int d = 0; d < size; d++) {
+    printf("%d ", d);
+    array[d] = d;
+  }
+  
+  printf("\n");
+}
+
+// copy deck values between two decks
+// using this because memcpy introduced some issues
+
+void copydeck(uint8_t * from, uint8_t * to) {
+
+  for (int cd = 0; cd < size; cd++) {
+    to[cd] = from[cd];
+  }
+}
+

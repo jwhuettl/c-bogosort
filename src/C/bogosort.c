@@ -3,26 +3,25 @@
 
 int bogosort(uint8_t * array) {
   
-  int sorted = 1;
+  int sorted = 0;
   uint32_t counter = 0;
   uint32_t overflows = 0;
 
+  uint8_t * sorted_array = (uint8_t *) calloc(size, sizeof(uint8_t));
+
+  sorted = 0;
+
   do {
     
-    // shuffle array
-    shuffle(array);
+    memcpy(&sorted_array, &array, size * sizeof(uint8_t));
 
-    // check for sortedness
-    int tmp_sorted = 0;
-
-    for (int i = 0; i < size; i++) {
-      if (array[i] != i) {
-        tmp_sorted = 1;
-      }
-    }
+    printdeck(sorted_array);
     
+
     counter++;
 
-  } while (!sorted);
+  } while (counter == 0);
+  
+  
 
 }

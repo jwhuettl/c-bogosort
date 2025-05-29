@@ -21,6 +21,8 @@ extern int size;
 // helper functions
 void shuffle(uint8_t * array);
 void printdeck(uint8_t * array);
+void builddeck(uint8_t * array, int size);
+void copydeck(uint8_t * from, uint8_t * to);
 
 // bogosort
 int bogosort(uint8_t * array);
