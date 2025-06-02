@@ -4,6 +4,8 @@
 
 int size = 3;
 int limit = 10; 
+uint32_t counter = 0;
+uint32_t overflows = 0;
 
 int main() {
   
@@ -14,6 +16,8 @@ int main() {
 
   for (int i = size; i < limit; i++) {
     
+    printf("size :: %d\n", size);
+
     uint8_t * init_array = (uint8_t *) calloc(size, sizeof(uint8_t));
     
     for (int j = 0; j < size; j++) {
@@ -25,20 +29,15 @@ int main() {
     
     printdeck(init_array);
     
-    uint8_t * workarray = (uint8_t *) calloc(size, sizeof(uint8_t));
-
-    copydeck(init_array, workarray);
-
-    shuffle(workarray);
-
-    printdeck(workarray);
+    bogosort(init_array);
     
     printf("\n");
 
     size++;
     free(init_array);
-    free(workarray);
     
+    printf("  counter   :: %d\n", counter);
+    printf("  overflows :: %d\n\n\n", overflows);
   }
 
   
